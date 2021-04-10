@@ -1,4 +1,4 @@
-import { prop } from '@typegoose/typegoose';
+import { prop, index } from '@typegoose/typegoose';
 import { Base, TimeStamps } from '@typegoose/typegoose/lib/defaultClasses';
 
 class ProductCharacteristic {
@@ -10,6 +10,13 @@ class ProductCharacteristic {
 }
 
 export interface ProductModel extends Base {}
+
+// @index({ title: 'text', seoText: 'text' }) // have to create indexes manually, in robo3t
+/*
+db.getCollection("TopPage").getIndexes()
+db.TopPage.createIndex({title: "text", seoText: "text"})
+db.getCollection("TopPage").dropIndex("title_text")
+*/
 export class ProductModel extends TimeStamps {
   @prop()
   image: string;
