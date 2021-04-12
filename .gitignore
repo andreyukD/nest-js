@@ -1,6 +1,7 @@
 priv
 .env
 .clinic
+/uploads
 
 # compiled output
 /dist
